@@ -1,0 +1,74 @@
+create table user(
+	CId int(10) not null,
+	uname varchar(30) not null,
+	username varchar(30) not null,
+	userAddress varchar(100) not null,
+	userEmail varchar(100) not null,
+	userTele varchar(11) not null,
+	userPassword varchar(50) not null,
+	admin int(1) not null,
+	constraint primary key(CID)
+);
+
+create table supplier(
+	SID int(10) not null,
+	sFname varchar(30) not null,
+	sLname varchar(30) not null,
+	sAddress varchar(100) not null,
+	sTele varchar(11) not null,
+	sEmail varchar(100) not null, 
+	constraint primary key(SID)
+);
+	
+create table category(
+	catId int(10) not null,
+	catName varchar(50),
+	constraint primary key(catId)
+);
+
+create table subcategory(
+	subcatId int(10) not null,
+	subcatName varchar(50),
+	constraint primary key(subcatId)
+);
+
+	
+create table item(
+	itemId int(10) not null,
+	iName varchar(50) not null,
+	SID varchar(10) not null,
+	iCategory varchar(50) null,
+	iSubcategory varchar(50) not null,
+	iTitle varchar(100) not null,
+	iPrice decimal(6,2) not null,
+	qtyOnHand int(5) not null,
+	description varchar(500) not null,
+	constraint primary key(itemId),
+	constraint foreign key(SID) references supplier(SID)
+	on update cascade on delete cascade
+);
+
+create table orderDetail(
+	orderDId int(10) not null,
+	itemId varchar(10) not null,
+	OrderID VARCHAR(10) NOT NULL,
+	qty int(11) not null,
+	discount int(2),
+	constraint primary key(orderDId),
+	constraint foreign key(OrderID) references Orders(OrderID),
+	constraint foreign key(itemId) references item(itemId)
+	on update cascade on delete cascade
+);
+
+create table Orders(
+	OrderID int(10) NOT NULL,
+	CId varchar(10) not null,
+	OrderDate varchar(20),
+	constraint primary key(OrderID),
+	constraint foreign key(CId) references customer(CId)
+	on update cascade on delete cascade
+);
+
+
+	
+	

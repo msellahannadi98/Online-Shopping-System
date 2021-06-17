@@ -1,0 +1,43 @@
+body{
+	margin: 0 auto;
+	background-image:url("../images/supplier.jpg");
+	background-repeat:no-repeat;
+	background-size: 100%;
+	opacity: 0.8;
+	filter: alpha(opacity=50);
+}
+.loginbox{
+	width: 700px;
+	height: 400px;
+	background: #000000;
+	color: #ffffff;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	box-sizing: border-box;
+	padding: 50px 100px;
+	border-radius:20%;
+}
+.center{
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+ 	width: 100%;
+}
+.button{
+  	border: 10;
+	border color: white;
+  	padding: 8px 8px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 16px;
+  	margin: 4px 2px;
+  	cursor: pointer;
+}
+.button a:hover{
+	cursor: pointer;
+	background: #ffc107;
+	color: #blue;
+}
